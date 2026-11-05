@@ -1,1 +1,2 @@
 1. Repository and branches studied.
+2. Merge conflict resolved.
