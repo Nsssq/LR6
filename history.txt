@@ -1,0 +1,10 @@
+65fc244 | 2026-11-05 | 4516 Петухова Н. П. | Revert "Add temporary line for revert demonstration"
+8e65cc7 | 2026-11-05 | 4516 Петухова Н. П. | Add temporary line for revert demonstration
+a4739f1 | 2026-11-05 | 4516 Петухова Н. П. | Record conflict resolution in practice note
+e7266d1 | 2026-11-05 | 4516 Петухова Н. П. | Add first practice note
+88d78e6 | 2026-11-05 | 4516 Петухова Н. П. | Resolve merge conflict in mergefile.txt
+f13ecfe | 2026-11-05 | Nsssq | Create github-note.txt
+921f53b | 2020-11-21 | Kurtyanik | Обновление информации
+0f9f50d | 2020-11-21 | Kurtyanik | Заполнил файл
+c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
+3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
