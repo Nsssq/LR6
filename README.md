@@ -18,7 +18,7 @@
 
 Для работы использован аккаунт GitHub `Nsssq`. Через функцию Fork создана собственная копия учебного репозитория `Kurtyanik/LR6`. Полученный репозиторий расположен по адресу `https://github.com/Nsssq/LR6`. На его странице отображается связь с исходным проектом и наличие двух веток.
 
-!\[Рисунок 1. Собственная копия учебного репозитория на GitHub](screenshots/01-fork.png)
+![Рисунок 1. Собственная копия учебного репозитория на GitHub](screenshots/01-fork.png)
 
 *Рисунок 1. Собственная копия учебного репозитория на GitHub.*
 
@@ -37,7 +37,7 @@ git config --global --get user.email
 
 Проверка настроек подтвердила, что новые локальные коммиты будут сохраняться с указанными данными автора.
 
-!\[Рисунок 2. Версия Git и настройка данных автора](screenshots/02-config.png)
+![Рисунок 2. Версия Git и настройка данных автора](screenshots/02-config.png)
 
 *Рисунок 2. Версия Git и настройка данных автора.*
 
@@ -46,8 +46,8 @@ git config --global --get user.email
 В домашнем каталоге создана папка `GitLabs`. В нее по HTTPS клонирован собственный репозиторий `Nsssq/LR6`. После перехода в папку `LR6` выполнены проверка состояния и просмотр адресов удаленного репозитория.
 
 ```bash
-mkdir -p \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
-cd \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
+mkdir -p \\\~/GitLabs
+cd \\\~/GitLabs
 git clone https://github.com/Nsssq/LR6.git
 cd LR6
 git status
@@ -56,7 +56,7 @@ git remote -v
 
 После клонирования активна ветка `master`. Рабочая папка не содержит незафиксированных изменений, а `origin` для получения и отправки данных указывает на собственный репозиторий.
 
-!\[Рисунок 3. Клонирование репозитория и проверка origin](screenshots/03-clone.png)
+![Рисунок 3. Клонирование репозитория и проверка origin](screenshots/03-clone.png)
 
 *Рисунок 3. Клонирование репозитория и проверка origin.*
 
@@ -73,7 +73,7 @@ cat github-note.txt
 
 Обновление прошло в режиме fast-forward. Команда `ls` показала новый файл, а `cat` подтвердила его содержимое.
 
-!\[Рисунок 4. Получение созданного на GitHub файла в локальный репозиторий](screenshots/04-pull.png)
+![Рисунок 4. Получение созданного на GitHub файла в локальный репозиторий](screenshots/04-pull.png)
 
 *Рисунок 4. Получение созданного на GitHub файла в локальный репозиторий.*
 
@@ -94,7 +94,7 @@ git --no-pager log --graph --oneline --decorate --all
 
 В истории `branch1` найден коммит `0f9f50d` с комментарием «Заполнил файл». В истории `master` присутствуют коммит `921f53b` «Обновление информации» и созданный через GitHub коммит `f13ecfe`. Граф истории показывает, что ветки содержат разные изменения после общей части истории.
 
-!\[Рисунок 5. Просмотр истории master и branch1 и общего графа коммитов](screenshots/05-history.png)
+![Рисунок 5. Просмотр истории master и branch1 и общего графа коммитов](screenshots/05-history.png)
 
 *Рисунок 5. Просмотр истории master и branch1 и общего графа коммитов.*
 
@@ -111,7 +111,7 @@ git --no-pager diff master "$side"
 
 В последнем коммите `master` добавлен `github-note.txt`. В `branch1` изменен `mergefile.txt`. Сравнение веток показало различия в строках этого файла, которые необходимо учитывать при слиянии. Отображаемое в сравнении удаление `github-note.txt` относится к сравнению двух состояний веток и само по себе не удаляет файл из рабочей папки.
 
-!\[Рисунок 6. Последние коммиты и различия между ветками](screenshots/06-last-changes.png)
+![Рисунок 6. Последние коммиты и различия между ветками](screenshots/06-last-changes.png)
 
 *Рисунок 6. Последние коммиты и различия между ветками.*
 
@@ -127,13 +127,13 @@ git merge "$side" -m "Merge side branch into master"
 
 Git обнаружил конфликт содержимого в `mergefile.txt` и приостановил автоматическое слияние. Причина конфликта состоит в изменении одного участка файла в обеих ветках.
 
-!\[Рисунок 7. Сообщение Git о конфликте при слиянии](screenshots/07-conflict.png)
+![Рисунок 7. Сообщение Git о конфликте при слиянии](screenshots/07-conflict.png)
 
 *Рисунок 7. Сообщение Git о конфликте при слиянии.*
 
 В текстовом редакторе просмотрен конфликтный участок. Между маркерами `<<<<<<< HEAD` и `=======` находятся строки из `master`, а между `=======` и `>>>>>>> branch1` - строки из `branch1`. В основной ветке участок содержит слова «очень», «важной», «информацией», а в побочной - «информацией», «противоречащей», «ветке», «master».
 
-!\[Рисунок 8. Конфликтный участок mergefile.txt в текстовом редакторе](screenshots/08-conflict-editor.png)
+![Рисунок 8. Конфликтный участок mergefile.txt в текстовом редакторе](screenshots/08-conflict-editor.png)
 
 *Рисунок 8. Конфликтный участок mergefile.txt в текстовом редакторе.*
 
@@ -151,7 +151,7 @@ git --no-pager log --graph --oneline --decorate -10
 
 Команда проверки неразрешенных конфликтов после добавления файла не вывела имен файлов. Создан коммит `88d78e6` с комментарием `Resolve merge conflict in mergefile.txt`. Граф истории подтверждает объединение линий изменений. Состояние `working tree clean` показывает, что слияние завершено, незафиксированных изменений нет.
 
-!\[Рисунок 9. Завершение слияния и коммит разрешения конфликта](screenshots/09-merge-done.png)
+![Рисунок 9. Завершение слияния и коммит разрешения конфликта](screenshots/09-merge-done.png)
 
 *Рисунок 9. Завершение слияния и коммит разрешения конфликта.*
 
@@ -167,7 +167,7 @@ git branch
 
 Git сообщил `Deleted branch branch1 (was 0f9f50d)`. В списке локальных веток осталась `master`. Изменения побочной ветки сохраняются в объединенной истории основной ветки.
 
-!\[Рисунок 10. Удаление локальной ветки branch1 после слияния](screenshots/10-branch-deleted.png)
+![Рисунок 10. Удаление локальной ветки branch1 после слияния](screenshots/10-branch-deleted.png)
 
 *Рисунок 10. Удаление локальной ветки branch1 после слияния.*
 
@@ -178,7 +178,7 @@ Git сообщил `Deleted branch branch1 (was 0f9f50d)`. В списке ло�
 ### 9.1. Первое изменение
 
 ```bash
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '1. Repository and branches studied.' > practice.txt
+printf '%s\\\\n' '1. Repository and branches studied.' > practice.txt
 cat practice.txt
 git add practice.txt
 git commit -m "Add first practice note"
@@ -186,14 +186,14 @@ git commit -m "Add first practice note"
 
 Создан коммит `e7266d1`, добавляющий файл с первой строкой.
 
-!\[Рисунок 11. Создание practice.txt и первый учебный коммит](screenshots/11-commits1.png)
+![Рисунок 11. Создание practice.txt и первый учебный коммит](screenshots/11-commits1.png)
 
 *Рисунок 11. Создание practice.txt и первый учебный коммит.*
 
 ### 9.2. Второе изменение
 
 ```bash
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '2. Merge conflict resolved.' >> practice.txt
+printf '%s\\\\n' '2. Merge conflict resolved.' >> practice.txt
 git --no-pager diff
 git add practice.txt
 git commit -m "Record conflict resolution in practice note"
@@ -201,14 +201,14 @@ git commit -m "Record conflict resolution in practice note"
 
 Команда `diff` показала добавление второй строки. Создан коммит `a4739f1`.
 
-!\[Рисунок 12. Добавление второй строки и второй учебный коммит](screenshots/11-commits2.png)
+![Рисунок 12. Добавление второй строки и второй учебный коммит](screenshots/11-commits2.png)
 
 *Рисунок 12. Добавление второй строки и второй учебный коммит.*
 
 ### 9.3. Третье изменение
 
 ```bash
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
+printf '%s\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
 git add practice.txt
 git commit -m "Add temporary line for revert demonstration"
 git --no-pager log --oneline -5
@@ -216,7 +216,7 @@ git --no-pager log --oneline -5
 
 Создан коммит `8e65cc7` с третьей, временной строкой. В истории отображаются три самостоятельных учебных коммита. Предупреждения о преобразовании LF в CRLF относятся к окончаниям строк; создание коммитов завершилось успешно.
 
-!\[Рисунок 13. Третий учебный коммит и проверка истории](screenshots/11-commits3.png)
+![Рисунок 13. Третий учебный коммит и проверка истории](screenshots/11-commits3.png)
 
 *Рисунок 13. Третий учебный коммит и проверка истории.*
 
@@ -235,7 +235,7 @@ git status
 
 Создан новый коммит `65fc244` с комментарием `Revert "Add temporary line for revert demonstration"`. Он удалил временную третью строку. Исходный коммит остался в истории, поэтому откат не переписал ранее сохраненные версии. После операции рабочая папка чистая.
 
-!\[Рисунок 14. Откат последнего коммита и проверка истории](screenshots/12-revert.png)
+![Рисунок 14. Откат последнего коммита и проверка истории](screenshots/12-revert.png)
 
 *Рисунок 14. Откат последнего коммита и проверка истории.*
 
@@ -246,7 +246,7 @@ git status
 2. Merge conflict resolved.
 ```
 
-!\[Рисунок 15. Содержимое practice.txt после отмены временного изменения](screenshots/12-revert.txt.png)
+![Рисунок 15. Содержимое practice.txt после отмены временного изменения](screenshots/12-revert.txt.png)
 
 *Рисунок 15. Содержимое practice.txt после отмены временного изменения.*
 
@@ -262,7 +262,7 @@ git branch
 
 В выводе `git branch` перечислены `master` и `report`. Звездочка находится рядом с `report`, что подтверждает переход в ветку отчета. Основные выполненные операции входят в ее историю, так как она создана после отката последнего учебного коммита.
 
-!\[Рисунок 16. Создание отдельной ветки report](screenshots/13-report-branch.png)
+![Рисунок 16. Создание отдельной ветки report](screenshots/13-report-branch.png)
 
 *Рисунок 16. Создание отдельной ветки report.*
 
@@ -284,8 +284,8 @@ git config --global core.quotepath false
 git config --global --get user.name
 git config --global --get user.email
 
-mkdir -p \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
-cd \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
+mkdir -p \\\~/GitLabs
+cd \\\~/GitLabs
 
 git clone https://github.com/Nsssq/LR6.git
 cd LR6
@@ -334,17 +334,17 @@ git branch --show-current
 git branch -d "$side"
 git branch
 
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '1. Repository and branches studied.' > practice.txt
+printf '%s\\\\n' '1. Repository and branches studied.' > practice.txt
 cat practice.txt
 git add practice.txt
 git commit -m "Add first practice note"
 
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '2. Merge conflict resolved.' >> practice.txt
+printf '%s\\\\n' '2. Merge conflict resolved.' >> practice.txt
 git --no-pager diff
 git add practice.txt
 git commit -m "Record conflict resolution in practice note"
 
-printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
+printf '%s\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
 git add practice.txt
 git commit -m "Add temporary line for revert demonstration"
 git --no-pager log --oneline -5
@@ -412,4 +412,6 @@ f13ecfe | 2026-11-05 | Nsssq | Create github-note.txt
 c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
 
 3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
+
+
 
