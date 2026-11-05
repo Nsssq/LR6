@@ -46,8 +46,8 @@ git config --global --get user.email
 В домашнем каталоге создана папка `GitLabs`. В нее по HTTPS клонирован собственный репозиторий `Nsssq/LR6`. После перехода в папку `LR6` выполнены проверка состояния и просмотр адресов удаленного репозитория.
 
 ```bash
-mkdir -p \\\~/GitLabs
-cd \\\~/GitLabs
+mkdir -p \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
+cd \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
 git clone https://github.com/Nsssq/LR6.git
 cd LR6
 git status
@@ -178,7 +178,7 @@ Git сообщил `Deleted branch branch1 (was 0f9f50d)`. В списке ло�
 ### 9.1. Первое изменение
 
 ```bash
-printf '%s\\\\n' '1. Repository and branches studied.' > practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '1. Repository and branches studied.' > practice.txt
 cat practice.txt
 git add practice.txt
 git commit -m "Add first practice note"
@@ -193,7 +193,7 @@ git commit -m "Add first practice note"
 ### 9.2. Второе изменение
 
 ```bash
-printf '%s\\\\n' '2. Merge conflict resolved.' >> practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '2. Merge conflict resolved.' >> practice.txt
 git --no-pager diff
 git add practice.txt
 git commit -m "Record conflict resolution in practice note"
@@ -208,7 +208,7 @@ git commit -m "Record conflict resolution in practice note"
 ### 9.3. Третье изменение
 
 ```bash
-printf '%s\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
 git add practice.txt
 git commit -m "Add temporary line for revert demonstration"
 git --no-pager log --oneline -5
@@ -284,8 +284,8 @@ git config --global core.quotepath false
 git config --global --get user.name
 git config --global --get user.email
 
-mkdir -p \\\~/GitLabs
-cd \\\~/GitLabs
+mkdir -p \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
+cd \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\~/GitLabs
 
 git clone https://github.com/Nsssq/LR6.git
 cd LR6
@@ -334,17 +334,17 @@ git branch --show-current
 git branch -d "$side"
 git branch
 
-printf '%s\\\\n' '1. Repository and branches studied.' > practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '1. Repository and branches studied.' > practice.txt
 cat practice.txt
 git add practice.txt
 git commit -m "Add first practice note"
 
-printf '%s\\\\n' '2. Merge conflict resolved.' >> practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '2. Merge conflict resolved.' >> practice.txt
 git --no-pager diff
 git add practice.txt
 git commit -m "Record conflict resolution in practice note"
 
-printf '%s\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
+printf '%s\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\n' '3. Temporary line for revert demonstration.' >> practice.txt
 git add practice.txt
 git commit -m "Add temporary line for revert demonstration"
 git --no-pager log --oneline -5
@@ -412,6 +412,4 @@ f13ecfe | 2026-11-05 | Nsssq | Create github-note.txt
 c08a654 | 2020-11-21 | Kurtyanik | Файл создан пустым
 
 3c6e913 | 2020-11-21 | Kurtyanik | Initial commit
-
-
 
